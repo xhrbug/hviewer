@@ -31,10 +31,6 @@ function getPosts(url, page) {
       name: article.select("h2.album-card-title").first().text(),
       url: config.baseUrl.concat(albumPath),
       thumbnail: article.select("div.album-card-cover img").first().attr("src"),
-      views: "0",
-      total: parseTotalCount(
-        article.select("div.album-card-number").first().text()
-      ),
     });
   });
   const total = parseInt(

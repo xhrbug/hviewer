@@ -14,7 +14,6 @@ function getPosts(url, page) {
         .select("div.post-thumbnail img")
         .first()
         .attr("data-src"),
-      views: article.select("span.post-views i").first().text(),
     });
   });
   const total = doc.select("div.pagination a").length;
