@@ -1,9 +1,5 @@
-var config = {
-  baseUrl: "https://misskon.com",
-};
-
 function getPosts(url, page) {
-  var doc = fetch(url.concat("page/").concat(page));
+  var doc = fetch(url);
   var articleList = doc.select("article.item-list");
   var posts = [];
   articleList.forEach((article) => {
@@ -17,15 +13,20 @@ function getPosts(url, page) {
     });
   });
   const total = doc.select("div.pagination a").length;
-  console.log("total posts pages".concat(total));
+  const nextEle = doc
+    .select(".pagination .current")
+    .first()
+    .nextElementSibling();
+
   return {
     posts: posts,
     total: total,
+    next: nextEle ? nextEle.attr("href") : null,
   };
 }
 
 function getImages(url, page) {
-  var doc = fetch(url.concat(page));
+  var doc = fetch(url);
   var urls = [];
   var images = doc.select("#fukie2 p img");
   images.forEach((image) => {
@@ -35,10 +36,15 @@ function getImages(url, page) {
     .select("div#fukie2 div.page-link")
     .first()
     .select(".post-page-numbers").length;
-  console.log(total);
+
+  const nextEle = doc
+    .select(".page-link .post-page-numbers.current")
+    .first()
+    .nextElementSibling();
 
   return {
     images: urls,
     total: total,
+    next: nextEle ? nextEle.attr("href") : null,
   };
 }
