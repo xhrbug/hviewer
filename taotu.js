@@ -19,7 +19,10 @@ function getPosts(url, page) {
       .split("/")[1]
   );
 
-  var nextPage = doc.select(".page-nav .curr-page").first().nextSibling();
+  var nextPage = doc
+    .select(".page-nav .curr-page")
+    .first()
+    .nextElementSibling();
 
   return {
     posts: posts,
