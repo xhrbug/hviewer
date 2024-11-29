@@ -1,10 +1,5 @@
-var config = {
-  baseUrl: "https://www.4khd.com/",
-};
-
 function getPosts(url, page) {
-  var _url = page == 1 ? url : url.concat("?query-3-page=").concat(page);
-  var doc = fetch(_url);
+  var doc = fetch(url);
   var articleList = doc.select("li.wp-block-post");
   var posts = [];
   articleList.forEach((article) => {
@@ -20,17 +15,24 @@ function getPosts(url, page) {
         .attr("src"),
     });
   });
-  const total = parseInt(doc.select("a.page-numbers").last().text());
+  const total = parseInt(
+    doc.select("a.page-numbers").last().text().replaceAll(",", "")
+  );
+
+  const nextPage = doc
+    .select(".wp-block-query-pagination-numbers .page-numbers.current")
+    .first()
+    .nextElementSibling();
 
   return {
     posts: posts,
     total: total,
+    next: nextPage ? nextPage.absUrl("href") : null,
   };
 }
 
 function getImages(url, page) {
-  var _url = page == 1 ? url : url.concat("/").concat(page);
-  var doc = fetch(_url);
+  var doc = fetch(url);
 
   var urls = [];
   var images = doc.select("p a img");
@@ -42,8 +44,14 @@ function getImages(url, page) {
   var last_page = doc.select("ul.page-links li.numpages").last();
   var total_pages = last_page ? parseInt(last_page.text()) : 1;
 
+  const nextPage = doc
+    .select(".page-links .numpages.current")
+    .first()
+    .nextElementSibling();
+
   return {
     images: urls,
     total: total_pages,
+    next: nextPage ? nextPage.select("a").first().absUrl("href") : null,
   };
 }
