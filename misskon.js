@@ -13,10 +13,11 @@ function getPosts(url, page) {
     });
   });
   const total = doc.select("div.pagination a").length;
-  const nextEle = doc
-    .select(".pagination .current")
-    .first()
-    .nextElementSibling();
+  console.log(url);
+  console.log(doc.select(".pagination .current"));
+  const nextEle = doc.select(".pagination .current").first()
+    ? doc.select(".pagination .current").first().nextElementSibling()
+    : null;
 
   return {
     posts: posts,
@@ -37,10 +38,12 @@ function getImages(url, page) {
     .first()
     .select(".post-page-numbers").length;
 
-  const nextEle = doc
-    .select(".page-link .post-page-numbers.current")
-    .first()
-    .nextElementSibling();
+  const nextEle = doc.select(".page-link .post-page-numbers.current").first()
+    ? doc
+        .select(".page-link .post-page-numbers.current")
+        .first()
+        .nextElementSibling()
+    : null;
 
   return {
     images: urls,

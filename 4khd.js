@@ -22,7 +22,11 @@ function getPosts(url, page) {
   const nextPage = doc
     .select(".wp-block-query-pagination-numbers .page-numbers.current")
     .first()
-    .nextElementSibling();
+    ? doc
+        .select(".wp-block-query-pagination-numbers .page-numbers.current")
+        .first()
+        .nextElementSibling()
+    : null;
 
   return {
     posts: posts,
@@ -44,10 +48,9 @@ function getImages(url, page) {
   var last_page = doc.select("ul.page-links li.numpages").last();
   var total_pages = last_page ? parseInt(last_page.text()) : 1;
 
-  const nextPage = doc
-    .select(".page-links .numpages.current")
-    .first()
-    .nextElementSibling();
+  const nextPage = doc.select(".page-links .numpages.current").first()
+    ? doc.select(".page-links .numpages.current").first().nextElementSibling()
+    : null;
 
   return {
     images: urls,
