@@ -1,5 +1,5 @@
 {
-  "version": 261124,
+  "version": 2,
   "sites": {
     "misskon": {
       "scriptFile": "misskon.js",
@@ -36,6 +36,15 @@
       "tags": {
         "softcore-ecchi": "https://www.luscious.net/hentai/softcore-ecchi-9/",
         "school-college": "https://www.luscious.net/hentai/school-college-35/"
+      }
+    },
+    "4khd": {
+      "scriptFile": "4khd.js",
+      "baseUrl": "https://www.4khd.com/",
+      "tags": {
+        "popular": "https://www.4khd.com/pages/popular/",
+        "cosplay": "https://www.4khd.com/pages/cosplay/",
+        "album": "https://www.4khd.com/pages/album/"
       }
     }
   }
