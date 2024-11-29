@@ -1,30 +1,5 @@
 var config = {
   baseUrl: "https://misskon.com",
-  tags: {
-    xiuren: "https://misskon.com/tag/xiuren/",
-    feilin: "https://misskon.com/tag/feilin/",
-    mfstar: "https://misskon.com/tag/mfstar/",
-    imiss: "https://misskon.com/tag/imiss/",
-    mygirl: "https://misskon.com/tag/mygirl/",
-    youmi: "https://misskon.com/tag/youmi/",
-    huayang: "https://misskon.com/tag/huayang/",
-    xiaoyu: "https://misskon.com/tag/xiaoyu/",
-    creamsoda: "https://misskon.com/tag/creamsoda/",
-    snap: "https://misskon.com/tag/moon-night-snap/",
-    photolife: "https://misskon.com/tag/saint-photolife/",
-    djawa: "https://misskon.com/tag/djawa/",
-    media: "https://misskon.com/tag/pure-media/",
-    loozy: "https://misskon.com/tag/loozy/",
-    bluecake: "https://misskon.com/tag/bluecake/",
-    sweetbox: "https://misskon.com/tag/sweetbox",
-    bimilstory: "https://misskon.com/tag/bimilstory",
-    lilynah: "https://misskon.com/tag/lilynah/",
-    cosplay: "https://misskon.com/tag/cosplay/",
-    top3: "https://misskon.com/top3/",
-    top7: "https://misskon.com/top7/",
-    top30: "https://misskon.com/top30/",
-    top60: "https://misskon.com/top60/",
-  },
 };
 
 function getPosts(url, page) {
