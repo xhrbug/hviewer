@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "sites": {
     "misskon": {
       "scriptFile": "misskon.js",
@@ -42,6 +42,7 @@
       "scriptFile": "4khd.js",
       "baseUrl": "https://www.4khd.com/",
       "tags": {
+        "home": "https://www.4khd.com/",
         "popular": "https://www.4khd.com/pages/popular/",
         "cosplay": "https://www.4khd.com/pages/cosplay/",
         "album": "https://www.4khd.com/pages/album/"
