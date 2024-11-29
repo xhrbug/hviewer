@@ -25,13 +25,9 @@ function getPosts(url, page) {
       thumbnail: article.select("div.album-card-cover img").first().attr("src"),
     });
   });
-  const total = parseInt(
-    doc
-      .select("div.o-pagination-item--control")
-      .last()
-      .previousElementSibling()
-      .text()
-  );
+
+  const data = parsePostsData(doc);
+  const total = traverseObject(data, ["album", "list", "info", "total_pages"]);
 
   return {
     posts: posts,
@@ -44,7 +40,7 @@ function getImages(url, page) {
   var api = url.concat("?page=").concat(page);
   console.log(api);
   var doc = fetch(api);
-  var data = getData(doc);
+  var data = parsePostData(doc);
   var urls = [];
   var images = doc.select(".picture-card-outer img");
   images.forEach((image) => {
@@ -59,12 +55,20 @@ function getImages(url, page) {
   };
 }
 
-function getData(doc) {
+function parsePostData(doc) {
   const script = doc.selectFirst("#root ~ script").html();
   const cacheText = /window.__ANANSI_CACHE__ = "(.+)"/.exec(script)[1];
   const data = /PictureListInsideAlbum.+data":(.+)/
     .exec(atob(cacheText))[1]
     .slice(0, -2);
+
+  return JSON.parse(data);
+}
+
+function parsePostsData(doc) {
+  const script = doc.selectFirst("#root ~ script").html();
+  const cacheText = /window.__ANANSI_CACHE__ = "(.+)"/.exec(script)[1];
+  const data = /AlbumList.+data":(.+)/.exec(atob(cacheText))[1].slice(0, -2);
 
   return JSON.parse(data);
 }
