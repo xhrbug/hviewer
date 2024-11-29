@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "sites": {
     "misskon": {
       "scriptFile": "misskon.js",
@@ -48,6 +48,15 @@
         "popular": "https://www.4khd.com/pages/popular/",
         "cosplay": "https://www.4khd.com/pages/cosplay/",
         "album": "https://www.4khd.com/pages/album/"
+      }
+    },
+    "taotu": {
+      "scriptFile": "taotu.js",
+      "baseUrl": "https://taotu.org/",
+      "tags": {
+        "home": "https://taotu.org/",
+        "recommend": "https://taotu.org/recommend/",
+        "cosersets": "https://taotu.org/publisher/Cosersets/"
       }
     }
   }
