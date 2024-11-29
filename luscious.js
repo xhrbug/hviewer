@@ -1,9 +1,5 @@
 import("utils.js");
 
-var config = {
-  baseUrl: "https://www.luscious.net/",
-};
-
 function parseTotalCount(input) {
   var totalCount = 0;
 
@@ -23,23 +19,24 @@ function getPosts(url, page) {
   var articleList = doc.select("div.album-card-target-wrapper");
   var posts = [];
   articleList.forEach((article) => {
-    var albumPath = article
-      .select("a.album-card-outer-link")
-      .first()
-      .attr("href");
     posts.push({
       name: article.select("h2.album-card-title").first().text(),
-      url: config.baseUrl.concat(albumPath),
+      url: article.select("a.album-card-outer-link").first().absUrl("href"),
       thumbnail: article.select("div.album-card-cover img").first().attr("src"),
     });
   });
   const total = parseInt(
-    doc.select("div.o-pagination-item--control").last().previousSibling().text()
+    doc
+      .select("div.o-pagination-item--control")
+      .last()
+      .previousElementSibling()
+      .text()
   );
-  console.log("total posts pages".concat(total));
+
   return {
     posts: posts,
     total: total,
+    next: url,
   };
 }
 
@@ -58,6 +55,7 @@ function getImages(url, page) {
   return {
     images: urls,
     total: traverseObject(data, ["picture", "list", "info", "total_pages"]),
+    next: url,
   };
 }
 
