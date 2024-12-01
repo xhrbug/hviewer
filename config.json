@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 5,
   "sites": {
     "misskon": {
       "scriptFile": "misskon.js",
@@ -57,6 +57,16 @@
         "home": "https://taotu.org/",
         "recommend": "https://taotu.org/recommend/",
         "cosersets": "https://taotu.org/publisher/Cosersets/"
+      }
+    },
+    "cosplaytele": {
+      "scriptFile": "cosplaytele.js",
+      "baseUrl": "https://cosplaytele.com/",
+      "tags": {
+        "genshin-impact": "https://cosplaytele.com/category/genshin-impact/",
+        "24hours": "https://cosplaytele.com/24-hours/",
+        "7day": "https://cosplaytele.com/7-day/",
+        "3day": "https://cosplaytele.com/3-day/"
       }
     }
   }
