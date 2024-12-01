@@ -10,9 +10,11 @@ function getPosts(url, page) {
       thumbnail: element.select(".box-image img").first().attr("src"),
     });
   });
-  const total = parseInt(
-    doc.select(".page-numbers .page-number").not(".next").last().text()
-  );
+  const total = doc.select(".page-numbers .page-number").not(".next").last()
+    ? parseInt(
+        doc.select(".page-numbers .page-number").not(".next").last().text()
+      )
+    : 1;
 
   const nextPage = doc.select(".next.page-number").first();
 
