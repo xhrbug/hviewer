@@ -15,7 +15,9 @@ function parseTotalCount(input) {
 }
 
 function getPosts(url, page) {
-  var doc = fetch(url.concat("?page=").concat(page));
+  const api = url.concat(url.endsWith("/") ? "?page=" : "&page=").concat(page);
+  console.log(api);
+  var doc = fetch(api);
   var articleList = doc.select("div.album-card-target-wrapper");
   var posts = [];
   articleList.forEach((article) => {
@@ -71,4 +73,16 @@ function parsePostsData(doc) {
   const data = /AlbumList.+data":(.+)/.exec(atob(cacheText))[1].slice(0, -2);
 
   return JSON.parse(data);
+}
+
+function getSearchUrl(query) {
+  return baseUrl
+    .concat(
+      "/albums/list/?album_type=pictures&audience_ids=%2B1%2B10%2B12%2B2%2B3%2B5%2B6%2B8%2B9&display=search_score&language_ids=%2B1%2B100%2B101%2B103%2B2%2B3%2B4%2B5%2B6%2B7%2B8%2B9%2B99&search_query="
+    )
+    .concat(query);
+}
+
+function search(queryUrl, page) {
+  return getPosts(queryUrl, page);
 }

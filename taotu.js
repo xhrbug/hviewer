@@ -1,4 +1,5 @@
 function getPosts(url, page) {
+  console.log(url);
   var doc = fetch(url);
   var articleList = doc.select("#MainContent_piclist div");
 
@@ -11,13 +12,17 @@ function getPosts(url, page) {
     });
   });
 
-  const total = parseInt(
-    doc
-      .select("nav#MainContent_header_nav span.page-number")
-      .first()
-      .text()
-      .split("/")[1]
-  );
+  const total = doc
+    .select("nav#MainContent_header_nav span.page-number")
+    .first()
+    ? parseInt(
+        doc
+          .select("nav#MainContent_header_nav span.page-number")
+          .first()
+          .text()
+          .split("/")[1]
+      )
+    : 1;
 
   var nextPage = doc.select(".page-nav .curr-page").first()
     ? doc.select(".page-nav .curr-page").first().nextElementSibling()
@@ -46,4 +51,12 @@ function getImages(url, page) {
     total: 1,
     next: null,
   };
+}
+
+function search(queryUrl, page) {
+  return getPosts(queryUrl, page);
+}
+
+function getSearchUrl(query) {
+  return baseUrl + "s?q=" + query;
 }

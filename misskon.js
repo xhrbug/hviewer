@@ -14,10 +14,12 @@ function getPosts(url, page) {
   });
   const total = doc.select("div.pagination a").length;
   console.log(url);
-  console.log(doc.select(".pagination .current"));
+  console.log(total);
+
   const nextEle = doc.select(".pagination .current").first()
     ? doc.select(".pagination .current").first().nextElementSibling()
     : null;
+  console.log("next=".concat(nextEle));
 
   return {
     posts: posts,
@@ -50,4 +52,12 @@ function getImages(url, page) {
     total: total,
     next: nextEle ? nextEle.attr("href") : null,
   };
+}
+
+function search(queryUrl, page) {
+  return getPosts(queryUrl, page);
+}
+
+function getSearchUrl(query) {
+  return baseUrl.concat("?s=").concat(query);
 }

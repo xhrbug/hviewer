@@ -58,3 +58,11 @@ function getImages(url, page) {
     next: nextPage ? nextPage.select("a").first().absUrl("href") : null,
   };
 }
+
+function search(queryUrl, page) {
+  return getPosts(queryUrl, page);
+}
+
+function getSearchUrl(query) {
+  return baseUrl + "search/" + query;
+}
