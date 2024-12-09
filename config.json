@@ -1,5 +1,5 @@
 {
-  "version": 5,
+  "version": 6,
   "sites": {
     "misskon": {
       "scriptFile": "misskon.js",
@@ -74,6 +74,15 @@
         "home": "https://buondua.com/",
         "cosplay": "https://buondua.com/tag/cosplay-10688",
         "hot": "https://buondua.com/hot/"
+      }
+    },
+    "hentaiclub": {
+      "scriptFile": "hentaiclub.js",
+      "baseUrl": "https://www.hentaiclub.net/",
+      "tags": {
+        "home": "https://www.hentaiclub.net/",
+        "r15": "https://www.hentaiclub.net/sort/r15.html/",
+        "r18": "https://www.hentaiclub.net/sort/r18.html/"
       }
     }
   }
