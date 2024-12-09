@@ -15,18 +15,14 @@ function getPosts(url, page) {
         .attr("src"),
     });
   });
-  const total = parseInt(
-    doc.select("a.page-numbers").last().text().replaceAll(",", "")
-  );
 
-  const nextPage = doc
+  var lastPage = doc.select("a.page-numbers").last();
+  const total = lastPage ? parseInt(lastPage.text().replaceAll(",", "")) : 1;
+
+  var nextPage = doc
     .select(".wp-block-query-pagination-numbers .page-numbers.current")
-    .first()
-    ? doc
-        .select(".wp-block-query-pagination-numbers .page-numbers.current")
-        .first()
-        .nextElementSibling()
-    : null;
+    .first();
+  nextPage = nextPage ? nextPage.nextElementSibling() : null;
 
   return {
     posts: posts,
@@ -48,9 +44,8 @@ function getImages(url, page) {
   var last_page = doc.select("ul.page-links li.numpages").last();
   var total_pages = last_page ? parseInt(last_page.text()) : 1;
 
-  const nextPage = doc.select(".page-links .numpages.current").first()
-    ? doc.select(".page-links .numpages.current").first().nextElementSibling()
-    : null;
+  var nextPage = doc.select(".page-links .numpages.current").first();
+  nextPage = nextPage ? nextPage.nextElementSibling() : null;
 
   return {
     images: urls,
