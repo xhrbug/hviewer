@@ -66,6 +66,15 @@
         "genshin-impact": "https://cosplaytele.com/category/genshin-impact/",
         "home": "https://cosplaytele.com/"
       }
+    },
+    "buondua": {
+      "scriptFile": "buondua.js",
+      "baseUrl": "https://buondua.com/",
+      "tags": {
+        "home": "https://buondua.com/",
+        "cosplay": "https://buondua.com/tag/cosplay-10688",
+        "hot": "https://buondua.com/hot/"
+      }
     }
   }
 }
