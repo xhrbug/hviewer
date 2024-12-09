@@ -16,10 +16,8 @@ function getPosts(url, page) {
   console.log(url);
   console.log(total);
 
-  const nextEle = doc.select(".pagination .current").first()
-    ? doc.select(".pagination .current").first().nextElementSibling()
-    : null;
-  console.log("next=".concat(nextEle));
+  var nextEle = doc.select(".pagination .current").first();
+  nextEle = nextEle ? nextEle.nextElementSibling() : null;
 
   return {
     posts: posts,
@@ -31,21 +29,15 @@ function getPosts(url, page) {
 function getImages(url, page) {
   var doc = fetch(url);
   var urls = [];
-  var images = doc.select("#fukie2 p img");
+  var images = doc.select("div.post-inner div.entry p img");
   images.forEach((image) => {
     urls.push(image.attr("data-src"));
   });
-  var total = doc
-    .select("div#fukie2 div.page-link")
-    .first()
-    .select(".post-page-numbers").length;
+  var total = doc.select("div.post-inner div.entry div.page-link").first();
+  total = total ? total.select("a.post-page-numbers").length : 1;
 
-  const nextEle = doc.select(".page-link .post-page-numbers.current").first()
-    ? doc
-        .select(".page-link .post-page-numbers.current")
-        .first()
-        .nextElementSibling()
-    : null;
+  var nextEle = doc.select(".page-link .post-page-numbers.current").first();
+  nextEle = nextEle ? nextEle.nextElementSibling() : null;
 
   return {
     images: urls,
