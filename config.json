@@ -84,6 +84,15 @@
         "r15": "https://www.hentaiclub.net/sort/r15.html/",
         "r18": "https://www.hentaiclub.net/sort/r18.html/"
       }
+    },
+    "cup2d": {
+      "scriptFile": "cup2d.js",
+      "baseUrl": "https://cup2d.com/",
+      "tags": {
+        "home": "https://cup2d.com/",
+        "ai": "https://cup2d.com/category/ai-art/",
+        "coser": "https://cup2d.com/tag/coser/"
+      }
     }
   }
 }
