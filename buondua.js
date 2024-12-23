@@ -59,6 +59,7 @@ function getImages(url, page) {
     )
     .last();
   next = next ? next.parent().nextElementSibling() : null;
+  next = next ? next.select("a").first().absUrl("href") : null;
 
   return {
     images: urls,
