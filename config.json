@@ -1,11 +1,16 @@
 {
-  "version": 6,
+  "version": 7,
   "sites": {
     "misskon": {
       "scriptFile": "misskon.js",
       "baseUrl": "https://misskon.com",
       "tags": {
         "home": "https://misskon.com/",
+        "cosplay": "https://misskon.com/tag/cosplay/",
+        "top3": "https://misskon.com/top3/",
+        "top7": "https://misskon.com/top7/",
+        "top30": "https://misskon.com/top30/",
+        "top60": "https://misskon.com/top60/",
         "xiuren": "https://misskon.com/tag/xiuren/",
         "feilin": "https://misskon.com/tag/feilin/",
         "mfstar": "https://misskon.com/tag/mfstar/",
@@ -23,12 +28,7 @@
         "bluecake": "https://misskon.com/tag/bluecake/",
         "sweetbox": "https://misskon.com/tag/sweetbox",
         "bimilstory": "https://misskon.com/tag/bimilstory",
-        "lilynah": "https://misskon.com/tag/lilynah/",
-        "cosplay": "https://misskon.com/tag/cosplay/",
-        "top3": "https://misskon.com/top3/",
-        "top7": "https://misskon.com/top7/",
-        "top30": "https://misskon.com/top30/",
-        "top60": "https://misskon.com/top60/"
+        "lilynah": "https://misskon.com/tag/lilynah/"
       }
     },
     "luscious": {
