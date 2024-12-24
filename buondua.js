@@ -4,7 +4,17 @@ function getPosts(url, page) {
   var doc = fetch(url);
   var listElement = doc.select("div.blog div.items-row");
   var posts = [];
+
   listElement.forEach((element) => {
+    var tags = [];
+    element
+      .select("div.item-content div.item-tags.tags a.tag.is-small")
+      .forEach((e) => {
+        tags.push({
+          name: e.text(),
+          url: e.absUrl("href"),
+        });
+      });
     posts.push({
       name: element
         .select("div.item-content div.page-header h2 a.item-link")
@@ -18,6 +28,7 @@ function getPosts(url, page) {
         .select("div.item-thumb a.item-link.popunder img")
         .first()
         .attr("src"),
+      tags: tags,
     });
   });
 
