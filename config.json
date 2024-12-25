@@ -1,5 +1,5 @@
 {
-  "version": 7,
+  "version": 8,
   "sites": {
     "misskon": {
       "scriptFile": "misskon.js",
@@ -92,6 +92,14 @@
         "home": "https://cup2d.com/",
         "ai": "https://cup2d.com/category/ai-art/",
         "coser": "https://cup2d.com/tag/coser/"
+      }
+    },
+    "ehentai": {
+      "scriptFile": "ehentai.js",
+      "baseUrl": "https://e-hentai.org/",
+      "tags": {
+        "home": "https://e-hentai.org/",
+        "popular": "https://e-hentai.org/popular"
       }
     }
   }
