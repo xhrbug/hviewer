@@ -20,7 +20,7 @@ function getPosts(url, page) {
       tags: tags,
     });
   });
-  const total = doc.select("div.pagination a").length;
+  const total = doc.select("div.pagination a").length || 1;
   console.log(url);
   console.log(total);
 
@@ -42,7 +42,7 @@ function getImages(url, page) {
     urls.push(image.attr("data-src"));
   });
   var total = doc.select("div.post-inner div.entry div.page-link").first();
-  total = total ? total.select("a.post-page-numbers").length : 1;
+  total = total ? total.select(".post-page-numbers").length : 1;
 
   var nextEle = doc.select(".page-link .post-page-numbers.current").first();
   nextEle = nextEle ? nextEle.nextElementSibling() : null;
