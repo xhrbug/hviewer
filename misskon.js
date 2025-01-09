@@ -1,9 +1,9 @@
 function getPosts(url, page) {
-  var doc = fetch(url);
-  var articleList = doc.select("article.item-list");
-  var posts = [];
+  let doc = fetch(url);
+  let articleList = doc.select("article.item-list");
+  let posts = [];
   articleList.forEach((article) => {
-    var tags = [];
+    let tags = [];
     article.select("p.post-meta span.post-cats a").forEach((tag) => {
       tags.push({
         name: tag.text(),
@@ -24,33 +24,35 @@ function getPosts(url, page) {
   console.log(url);
   console.log(total);
 
-  var nextEle = doc.select(".pagination .current").first();
+  let nextEle = doc.select(".pagination .current").first();
   nextEle = nextEle ? nextEle.nextElementSibling() : null;
+  nextEle = nextEle ? nextEle.attr("href") : null;
 
   return {
     posts: posts,
     total: total,
-    next: nextEle ? nextEle.attr("href") : null,
+    next: nextEle,
   };
 }
 
 function getImages(url, page) {
-  var doc = fetch(url);
-  var urls = [];
-  var images = doc.select("div.post-inner div.entry p img");
+  let doc = fetch(url);
+  let urls = [];
+  let images = doc.select("div.post-inner div.entry p img");
   images.forEach((image) => {
     urls.push(image.attr("data-src"));
   });
-  var total = doc.select("div.post-inner div.entry div.page-link").first();
+  let total = doc.select("div.post-inner div.entry div.page-link").first();
   total = total ? total.select(".post-page-numbers").length : 1;
 
-  var nextEle = doc.select(".page-link .post-page-numbers.current").first();
+  let nextEle = doc.select(".page-link .post-page-numbers.current").first();
   nextEle = nextEle ? nextEle.nextElementSibling() : null;
+  nextEle = nextEle ? nextEle.attr("href") : null;
 
   return {
     images: urls,
     total: total,
-    next: nextEle ? nextEle.attr("href") : null,
+    next: nextEle,
   };
 }
 
