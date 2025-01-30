@@ -1,7 +1,7 @@
 function getPosts(url, page) {
   console.log(url);
 
-  var doc = fetch(url);
+  var doc = fetch(url).html();
   var listElement = doc.select("div.content div#masonry.row div.item");
   var posts = [];
   listElement.forEach((element) => {
@@ -30,7 +30,7 @@ function getPosts(url, page) {
 
 function getImages(url, page) {
   console.log(url);
-  var doc = fetch(url);
+  var doc = fetch(url).html();
 
   var urls = [];
   var images = doc.select("div.post-item > img");

@@ -1,5 +1,5 @@
 function getPosts(url, page) {
-  var doc = fetch(url);
+  var doc = fetch(url).html();
 
   var listItem = doc.select("table.itg.gltc tbody tr");
 
@@ -47,12 +47,12 @@ function getPosts(url, page) {
 }
 
 function getImages(url, page) {
-  var doc = fetch(url);
+  var doc = fetch(url).html();
   var urls = [];
   var links = doc.select("div#gdt a");
   links.forEach((link) => {
     const href = link.attr("href");
-    const html = fetch(String(href)); // convert from object to string
+    const html = fetch(String(href)).html(); // convert from object to string
     const src = html.select("img#img").first().attr("src");
     urls.push(src);
   });

@@ -1,4 +1,19 @@
-import("utils.js");
+function traverseObject(obj, keys) {
+  var current = obj;
+
+  for (var i = 0; i < keys.length; i++) {
+    var key = keys[i];
+    if (key === "[]") {
+      current = current[0];
+    } else if (key === "{}") {
+      const firstKey = current.keys[0];
+      current = current[firstKey];
+    } else {
+      current = current[key];
+    }
+  }
+  return current;
+}
 
 function parseTotalCount(input) {
   var totalCount = 0;
@@ -17,7 +32,7 @@ function parseTotalCount(input) {
 function getPosts(url, page) {
   const api = url.concat(url.endsWith("/") ? "?page=" : "&page=").concat(page);
   console.log(api);
-  var doc = fetch(api);
+  var doc = fetch(api).html();
   var articleList = doc.select("div.album-card-target-wrapper");
   var posts = [];
   articleList.forEach((article) => {
@@ -41,7 +56,7 @@ function getPosts(url, page) {
 function getImages(url, page) {
   var api = url.concat("?page=").concat(page);
   console.log(api);
-  var doc = fetch(api);
+  var doc = fetch(api).html();
   var data = parsePostData(doc);
   var urls = [];
   var images = doc.select(".picture-card-outer img");

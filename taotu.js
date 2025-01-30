@@ -1,6 +1,6 @@
 function getPosts(url, page) {
   console.log(url);
-  var doc = fetch(url);
+  var doc = fetch(url).html();
   var articleList = doc.select("#MainContent_piclist div");
 
   var posts = [];
@@ -36,7 +36,7 @@ function getPosts(url, page) {
 }
 
 function getImages(url, page) {
-  var doc = fetch(url);
+  var doc = fetch(url).html();
 
   var urls = [];
   var images = doc.select("#MainContent_piclist a");

@@ -1,6 +1,6 @@
 function getPosts(url, page) {
   console.log(url);
-  var doc = fetch(url);
+  var doc = fetch(url).html();
   var listElement = doc.select("#post-list div .post-item");
   var posts = [];
   listElement.forEach((element) => {
@@ -26,7 +26,7 @@ function getPosts(url, page) {
 }
 
 function getImages(url, page) {
-  var doc = fetch(url);
+  var doc = fetch(url).html();
 
   var urls = [];
   var images = doc.select(".gallery-item img");

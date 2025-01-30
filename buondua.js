@@ -1,7 +1,7 @@
 function getPosts(url, page) {
   console.log(url);
 
-  var doc = fetch(url);
+  var doc = fetch(url).html();
   var listElement = doc.select("div.blog div.items-row");
   var posts = [];
 
@@ -49,7 +49,7 @@ function getPosts(url, page) {
 
 function getImages(url, page) {
   console.log(url);
-  var doc = fetch(url);
+  var doc = fetch(url).html();
 
   var urls = [];
   var images = doc.select("div.article.content div.article-fulltext p img");

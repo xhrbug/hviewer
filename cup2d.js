@@ -1,5 +1,5 @@
 function getPosts(url, page) {
-  var doc = fetch(url);
+  var doc = fetch(url).html();
   var listElement = doc.select(
     "div.gridshow-posts-content div.gridshow-posts div.gridshow-grid-post"
   );
@@ -40,7 +40,7 @@ function getPosts(url, page) {
 }
 
 function getImages(url, page) {
-  var doc = fetch(url);
+  var doc = fetch(url).html();
   var urls = [];
   var images = doc.select(".entry-content > div > a");
 

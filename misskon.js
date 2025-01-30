@@ -1,5 +1,5 @@
 function getPosts(url, page) {
-  let doc = fetch(url);
+  let doc = fetch(url).html();
   let articleList = doc.select("article.item-list");
   let posts = [];
   articleList.forEach((article) => {
@@ -36,7 +36,7 @@ function getPosts(url, page) {
 }
 
 function getImages(url, page) {
-  let doc = fetch(url);
+  let doc = fetch(url).html();
   let urls = [];
   let images = doc.select("div.post-inner div.entry p img");
   images.forEach((image) => {

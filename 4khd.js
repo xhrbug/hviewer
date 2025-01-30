@@ -1,5 +1,5 @@
 function getPosts(url, page) {
-  var doc = fetch(url);
+  var doc = fetch(url).html();
   var articleList = doc.select("li.wp-block-post");
   var posts = [];
   articleList.forEach((article) => {
@@ -32,7 +32,7 @@ function getPosts(url, page) {
 }
 
 function getImages(url, page) {
-  var doc = fetch(url);
+  var doc = fetch(url).html();
 
   var urls = [];
   var images = doc.select("p a img");
