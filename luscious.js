@@ -30,16 +30,17 @@ function parseTotalCount(input) {
 }
 
 function getPosts(url, page) {
-  const api = url.concat(url.endsWith("/") ? "?page=" : "&page=").concat(page);
-  console.log(api);
+  let api = url;
+  if (page !== 1)
+    api = api.concat(url.endsWith("/") ? "?page=" : "&page=").concat(page);
   var doc = fetch(api).html();
-  var articleList = doc.select("div.album-card-target-wrapper");
+  var articleList = doc.select("div.o-justified-box");
   var posts = [];
   articleList.forEach((article) => {
     posts.push({
-      name: article.select("h2.album-card-title").first().text(),
-      url: article.select("a.album-card-outer-link").first().absUrl("href"),
-      thumbnail: article.select("div.album-card-cover img").first().attr("src"),
+      name: article.select("a").first().attr("title"),
+      url: article.select("a").first().absUrl("href"),
+      thumbnail: article.select("a img").first().attr("src"),
     });
   });
 
