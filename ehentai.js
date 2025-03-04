@@ -58,7 +58,14 @@ function getImages(url, page) {
   });
   var lastNav = doc.select("div.gtb table.ptb tbody tr td a").last();
   const next = lastNav ? lastNav.attr("href") : null;
-  var total = doc.select("div.gtb table.ptb tbody tr td a").length - 2;
+
+  var total = doc
+    .select(
+      "#gdd > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(6) > td:nth-child(2)"
+    )
+    .first();
+  total = (total && total.text().split(" pages")[0]) || 1;
+  total = parseInt(Math.ceil(total / 20));
 
   return {
     images: urls,
