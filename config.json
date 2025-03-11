@@ -1,7 +1,8 @@
 {
-  "version": 10,
-  "sites": {
-    "misskon": {
+  "version": 11,
+  "sites": [
+    {
+      "name": "misskon",
       "scriptFile": "misskon.js",
       "baseUrl": "https://misskon.com",
       "tags": {
@@ -31,7 +32,8 @@
         "lilynah": "https://misskon.com/tag/lilynah/"
       }
     },
-    "luscious": {
+    {
+      "name": "luscious",
       "scriptFile": "luscious.js",
       "baseUrl": "https://www.luscious.net/",
       "tags": {
@@ -40,7 +42,8 @@
         "school-college": "https://www.luscious.net/hentai/school-college-35/"
       }
     },
-    "4khd": {
+    {
+      "name": "4khd",
       "scriptFile": "4khd.js",
       "baseUrl": "https://www.4khd.com/",
       "tags": {
@@ -50,7 +53,8 @@
         "album": "https://www.4khd.com/pages/album/"
       }
     },
-    "taotu": {
+    {
+      "name": "taotu",
       "scriptFile": "taotu.js",
       "baseUrl": "https://taotu.org/",
       "tags": {
@@ -59,7 +63,8 @@
         "cosersets": "https://taotu.org/publisher/Cosersets/"
       }
     },
-    "cosplaytele": {
+    {
+      "name": "cosplaytele",
       "scriptFile": "cosplaytele.js",
       "baseUrl": "https://cosplaytele.com/",
       "tags": {
@@ -67,7 +72,8 @@
         "home": "https://cosplaytele.com/"
       }
     },
-    "buondua": {
+    {
+      "name": "buondua",
       "scriptFile": "buondua.js",
       "baseUrl": "https://buondua.com/",
       "tags": {
@@ -76,7 +82,8 @@
         "hot": "https://buondua.com/hot/"
       }
     },
-    "hentaiclub": {
+    {
+      "name": "hentaiclub",
       "scriptFile": "hentaiclub.js",
       "baseUrl": "https://www.hentaiclub.net/",
       "tags": {
@@ -85,7 +92,8 @@
         "r18": "https://www.hentaiclub.net/sort/r18.html/"
       }
     },
-    "cup2d": {
+    {
+      "name": "cup2d",
       "scriptFile": "cup2d.js",
       "baseUrl": "https://cup2d.com/",
       "tags": {
@@ -94,7 +102,8 @@
         "coser": "https://cup2d.com/tag/coser/"
       }
     },
-    "ehentai": {
+    {
+      "name": "ehentai",
       "scriptFile": "ehentai.js",
       "baseUrl": "https://e-hentai.org/",
       "tags": {
@@ -102,5 +111,5 @@
         "popular": "https://e-hentai.org/popular"
       }
     }
-  }
+  ]
 }
