@@ -20,9 +20,8 @@ function getPosts(url, page) {
       tags: tags,
     });
   });
-  const total = doc.select("div.pagination a").length || 1;
-  console.log(url);
-  console.log(total);
+  var total = doc.select("div.pagination a").last();
+  total = total ? parseInt(total.text()) : 1;
 
   let nextEle = doc.select(".pagination .current").first();
   nextEle = nextEle ? nextEle.nextElementSibling() : null;
