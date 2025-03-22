@@ -12,7 +12,8 @@ function getPosts(url, page) {
       thumbnail: article
         .select("figure.wp-block-post-featured-image img")
         .first()
-        .attr("src"),
+        .attr("src")
+        .replace("pic.4khd.com", "yt4.googleusercontent.com"),
     });
   });
 
@@ -37,7 +38,7 @@ function getImages(url, page) {
   var urls = [];
   var images = doc.select("p a img");
   images.forEach((image) => {
-    const src = image.attr("src");
+    const src = image.attr("src").replace("pic.4khd.com", "img.4khd.com");
     urls.push(src);
   });
 

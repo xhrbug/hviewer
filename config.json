@@ -1,7 +1,8 @@
 {
-  "version": 10,
-  "sites": {
-    "misskon": {
+  "version": 12,
+  "sites": [
+    {
+      "name": "misskon",
       "scriptFile": "misskon.js",
       "baseUrl": "https://misskon.com",
       "tags": {
@@ -12,26 +13,21 @@
         "top30": "https://misskon.com/top30/",
         "top60": "https://misskon.com/top60/",
         "xiuren": "https://misskon.com/tag/xiuren/",
-        "feilin": "https://misskon.com/tag/feilin/",
-        "mfstar": "https://misskon.com/tag/mfstar/",
-        "imiss": "https://misskon.com/tag/imiss/",
-        "mygirl": "https://misskon.com/tag/mygirl/",
-        "youmi": "https://misskon.com/tag/youmi/",
-        "huayang": "https://misskon.com/tag/huayang/",
-        "xiaoyu": "https://misskon.com/tag/xiaoyu/",
-        "creamsoda": "https://misskon.com/tag/creamsoda/",
-        "snap": "https://misskon.com/tag/moon-night-snap/",
         "photolife": "https://misskon.com/tag/saint-photolife/",
         "djawa": "https://misskon.com/tag/djawa/",
         "media": "https://misskon.com/tag/pure-media/",
         "loozy": "https://misskon.com/tag/loozy/",
-        "bluecake": "https://misskon.com/tag/bluecake/",
-        "sweetbox": "https://misskon.com/tag/sweetbox",
-        "bimilstory": "https://misskon.com/tag/bimilstory",
-        "lilynah": "https://misskon.com/tag/lilynah/"
-      }
+        "bluecake": "https://misskon.com/tag/bluecake/"
+      },
+      "ads": [
+        "a.magsrv.com",
+        "misskon.disqus.com",
+        "gukahdbam.com",
+        "frozenpayerpregnant.com"
+      ]
     },
-    "luscious": {
+    {
+      "name": "luscious",
       "scriptFile": "luscious.js",
       "baseUrl": "https://www.luscious.net/",
       "tags": {
@@ -40,7 +36,8 @@
         "school-college": "https://www.luscious.net/hentai/school-college-35/"
       }
     },
-    "4khd": {
+    {
+      "name": "4khd",
       "scriptFile": "4khd.js",
       "baseUrl": "https://www.4khd.com/",
       "tags": {
@@ -48,9 +45,11 @@
         "popular": "https://www.4khd.com/pages/popular/",
         "cosplay": "https://www.4khd.com/pages/cosplay/",
         "album": "https://www.4khd.com/pages/album/"
-      }
+      },
+      "ads": ["s.magsrv.com", "static.cloudflareinsights.com"]
     },
-    "taotu": {
+    {
+      "name": "taotu",
       "scriptFile": "taotu.js",
       "baseUrl": "https://taotu.org/",
       "tags": {
@@ -59,7 +58,8 @@
         "cosersets": "https://taotu.org/publisher/Cosersets/"
       }
     },
-    "cosplaytele": {
+    {
+      "name": "cosplaytele",
       "scriptFile": "cosplaytele.js",
       "baseUrl": "https://cosplaytele.com/",
       "tags": {
@@ -67,16 +67,19 @@
         "home": "https://cosplaytele.com/"
       }
     },
-    "buondua": {
+    {
+      "name": "buondua",
       "scriptFile": "buondua.js",
       "baseUrl": "https://buondua.com/",
       "tags": {
         "home": "https://buondua.com/",
         "cosplay": "https://buondua.com/tag/cosplay-10688",
         "hot": "https://buondua.com/hot/"
-      }
+      },
+      "ads": ["creative.rmhfrtnd.com", "a.magsrv.com"]
     },
-    "hentaiclub": {
+    {
+      "name": "hentaiclub",
       "scriptFile": "hentaiclub.js",
       "baseUrl": "https://www.hentaiclub.net/",
       "tags": {
@@ -85,7 +88,8 @@
         "r18": "https://www.hentaiclub.net/sort/r18.html/"
       }
     },
-    "cup2d": {
+    {
+      "name": "cup2d",
       "scriptFile": "cup2d.js",
       "baseUrl": "https://cup2d.com/",
       "tags": {
@@ -94,7 +98,8 @@
         "coser": "https://cup2d.com/tag/coser/"
       }
     },
-    "ehentai": {
+    {
+      "name": "ehentai",
       "scriptFile": "ehentai.js",
       "baseUrl": "https://e-hentai.org/",
       "tags": {
@@ -102,5 +107,5 @@
         "popular": "https://e-hentai.org/popular"
       }
     }
-  }
+  ]
 }
